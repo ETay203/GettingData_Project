@@ -7,7 +7,7 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 ##Human Activity Recognition Using Smartphones Dataset
 Experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
-This repository contains a code book (CodeBook.md) that describes the variables, the data, and the transformations that I performed to clean up the data.
+This repository contains a code book (CodeBook.md) that describes the variables, the data, and the transformations that I performed to clean up the data. The code book updates and modifies the original readme.txt and features_info.txt that were given with the data for this project.
 
 
 ##Analysis 

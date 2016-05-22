@@ -3,8 +3,14 @@
 This code book describes the variables, the data, and the transformations I performed to clean up the data.
 
 ##The data
+The data for this project was taken from the Human Activity Recognition Using Smartphones Dataset.  
 
-For each record the following is provided:
+Experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+
+###For each record the following is provided:
  
 * A 561-feature vector with time and frequency domain variables. 
 * Its activity label. 
@@ -12,13 +18,11 @@ For each record the following is provided:
 * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 * Triaxial Angular velocity from the gyroscope. 
 
-###The dataset includes the following files:
+###This repo includes the following files:
 
-* 'README.txt': The original ReadMe file included with the data set. 
+* 'README.md': 
 
 * 'features.txt': List of all features.
- 
-* 'features_info.txt': Shows information about the variables used on the feature vector. (much of which is copied below)
 
 * 'activity_labels.txt': Links the class labels with their activity name.
 
@@ -50,7 +54,7 @@ The following files are available for the train and test data. Their description
 * Each feature vector is a row on the text file.
 
 
-##The variables
+##The features and variables
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -112,16 +116,17 @@ The complete list of variables of each feature vector is available in 'features.
 
 ##The transformations performed by run_analysis.R
 
-A script, run_analysis.R was written for this project.  It merges the training and test sets to produce a new tidy data set displying the average of each variable for each activity and each subject.
+A script, run_analysis.R was written for this project.  It merges the training and test sets and ultimately produces a new tidy data set displying the average of each variable for each activity and each subject.
 
 The script performs the following transformations:
 
 * Reads in the data files and calls the required libraries
-* Merges the training and the test sets to create one data set of 10299 observations.
-*Extracts only the measurements on the mean and standard deviation for each measurement.  It does this by selecting variables in full_set that contain "mean()" and "std()" (which also includes meanFreq()).
-*Applies the activity names given in activity_labels.txt to name the activities in the data set
-*Appropriately labels the data set with descriptive variable names given in features.txt. The original names given in features.txt are edited to replace "-" with "_" and remove "()" making reading them asier.
-*From the data set in step 4, creates a second, independent tidy data set (tidy_data.txt) with the average of each variable for each activity and each subject.
+* Merges the training and the test sets to create one data set of 10299 observations and 561 variables (full_set).
+*Extracts only the measurements on the mean and standard deviation for each measurement.  It does this by selecting the variables in full_set that contain "mean()" and "std()" (which also includes meanFreq()).  There are a total of 79 variables.
+*Applies the activity names given in activity_labels.txt to name the activities in the data set adding an additional column "activities".
+* Adds the subjects to the full_set, adding an additional column "subjects"
+*Appropriately labels the data set with the descriptive variable names given in features.txt. The original names given in features.txt are edited to replace "-" with "_" and remove "()" making reading them easier.
+*From this full data set, a second independent tidy data set (tidy_data.txt) with the average of each variable for each activity and each subject is created.
 
 
 
