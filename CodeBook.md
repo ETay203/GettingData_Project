@@ -1,8 +1,8 @@
-#Code Book
+# Code Book
 
 This code book describes the variables, the data, and the transformations I performed to clean up the data.
 
-##The data
+## The data
 The data for this project was taken from the Human Activity Recognition Using Smartphones Dataset.  
 
 Experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz were captured. The experiments were video-recorded to label the data manually. The obtained dataset was randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.
@@ -10,7 +10,7 @@ Experiments were carried out with a group of 30 volunteers within an age bracket
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
 
-###For each record the following is provided:
+### For each record the following is provided:
  
 * A 561-feature vector with time and frequency domain variables. 
 * Its activity label. 
@@ -18,7 +18,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 * Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration.
 * Triaxial Angular velocity from the gyroscope. 
 
-###This repo includes the following files:
+### This repo includes the following files:
 
 * 'README.md': 
 
@@ -49,12 +49,12 @@ The following files are available for the train and test data. Their description
 
 * 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
-####Notes: 
+#### Notes: 
 * Features are normalized and bounded within [-1,1].
 * Each feature vector is a row on the text file.
 
 
-##The features and variables
+## The features and variables
 
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
@@ -114,7 +114,7 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 The complete list of variables of each feature vector is available in 'features.txt'
 
 
-##The transformations performed by run_analysis.R
+## The transformations performed by run_analysis.R
 
 A script, run_analysis.R was written for this project.  It merges the training and test sets and ultimately produces a new tidy data set displying the average of each variable for each activity and each subject.
 
